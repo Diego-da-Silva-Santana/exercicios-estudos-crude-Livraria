@@ -4,7 +4,6 @@ import com.livraria.dto.LivroResponseDTO;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Table(name = "tb_livro")
@@ -34,8 +33,8 @@ public class Livro {
         this.isbn = isbn;
     }
 
-    public LivroResponseDTO toLivroResponseDTO(){
-        return  new LivroResponseDTO(id, titulo, descricao, publicacao, isbn);
+    public LivroResponseDTO toLivroResponseDTO() {
+        return new LivroResponseDTO(id, titulo, descricao, publicacao, isbn);
     }
 
     public Long getId() {

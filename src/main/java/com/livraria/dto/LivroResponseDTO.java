@@ -1,7 +1,6 @@
 package com.livraria.dto;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class LivroResponseDTO {
 

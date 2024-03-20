@@ -9,7 +9,6 @@ import jakarta.validation.constraints.Size;
 import org.hibernate.validator.constraints.ISBN;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class LivroRequestDTO {
 
@@ -21,7 +20,7 @@ public class LivroRequestDTO {
     private String descricao;
     @NotNull
     @Past
-    @JsonFormat(pattern="dd/MM/yyyy")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate publicacao;
     @NotBlank
     @ISBN

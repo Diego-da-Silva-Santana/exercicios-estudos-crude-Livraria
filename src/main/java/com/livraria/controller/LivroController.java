@@ -21,10 +21,6 @@ public class LivroController {
     @Autowired
     private LivroService service;
 
-    public LivroController(LivroService service) {
-        this.service = service;
-    }
-
     @PostMapping
     public ResponseEntity<LivroResponseDTO> adicionarLivro(@Valid @RequestBody LivroRequestDTO requestDTO) {
         LivroResponseDTO responseDTO = service.adicionarLivro(requestDTO.ToLivro());
