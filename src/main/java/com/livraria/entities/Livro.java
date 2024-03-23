@@ -8,16 +8,20 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "tb_livro")
 public class Livro {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(nullable = false, length = 100)
     private String titulo;
 
+    @Column(nullable = false, length = 4000)
     private String descricao;
 
+    @Column(nullable = false)
     private LocalDate publicacao;
 
+    @Column(nullable = false)
     private String isbn;
 
     public Livro() {

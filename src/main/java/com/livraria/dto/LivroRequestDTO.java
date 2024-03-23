@@ -12,18 +12,22 @@ import java.time.LocalDate;
 
 public class LivroRequestDTO {
 
-    @NotBlank
-    @Size(max = 200)
+    @NotBlank(message = "O título não pode estar em branco")
+    @Size(max = 100, message = "O título deve ter no máximo 100 caracteres")
     private String titulo;
-    @Size(max = 4000)
+
     @NotBlank
+    @Size(max = 4000, message = "O título deve ter no máximo 100 caracteres")
     private String descricao;
-    @NotNull
-    @Past
+
+    @NotNull(message = "A data de publicação não pode ser nula")
+    @Past(message = "A data de publicação deve ser uma data passada")
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate publicacao;
-    @NotBlank
-    @ISBN
+
+    @NotBlank(message = "O ISBN não pode estar em branco")
+    @Size(min = 10, max = 13, message = "O ISBN deve ter entre 10 e 13 caracteres")
+    @ISBN(message = "O ISBN não é válido")
     private String isbn;
 
     public LivroRequestDTO() {

@@ -1,5 +1,7 @@
 package com.livraria.dto;
 
+import com.livraria.entities.Livro;
+
 import java.time.LocalDate;
 
 public class LivroResponseDTO {
@@ -27,6 +29,14 @@ public class LivroResponseDTO {
         this.descricao = descricao;
         this.publicacao = publicacao;
         this.isbn = isbn;
+    }
+
+    public  LivroResponseDTO(Livro livro){
+        this.id = livro.getId();
+        this.isbn = livro.getIsbn();
+        this.descricao = livro.getDescricao();
+        this.publicacao = livro.getPublicacao();
+        this.titulo = livro.getTitulo();
     }
 
     public Long getId() {
